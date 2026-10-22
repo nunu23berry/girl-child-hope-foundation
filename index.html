@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8fc">
+  <meta name="description" content="Girl Child Hope Foundation helps girls access education, care, and the opportunity to shape their own future.">
+  <title>Girl Child Hope Foundation | Every girl deserves a bright future</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #30213c;
+      --muted: #716678;
+      --pink: #d94e91;
+      --pink-dark: #bd3479;
+      --purple: #7047a1;
+      --cream: #fff8fc;
+      --lilac: #f3edf9;
+      --white: #fff;
+      --shadow: 0 18px 55px rgba(65, 35, 79, .1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .topline { height: 5px; background: linear-gradient(90deg, #e86aa5, #8c62bb); }
+
+    header {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      border-bottom: 1px solid rgba(61, 34, 77, .08);
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(12px);
+    }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 750; line-height: 1.15; }
+    .brand-mark {
+      display: grid;
+      width: 43px;
+      height: 43px;
+      place-items: center;
+      border-radius: 15px;
+      color: white;
+      background: linear-gradient(145deg, #e86aa5, #8353aa);
+      font-size: 21px;
+    }
+    .brand small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 650; letter-spacing: .11em; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 30px; }
+    nav a { color: #51465a; font-size: 14px; font-weight: 600; text-decoration: none; }
+    nav a:hover { color: var(--pink-dark); }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 999px;
+      color: white;
+      background: var(--pink);
+      box-shadow: 0 8px 20px rgba(217, 78, 145, .2);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--pink-dark); }
+    .button.secondary { color: var(--purple); background: white; box-shadow: none; border: 1px solid #e6d9ef; }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); font-size: 25px; }
+
+    .hero { overflow: hidden; padding: 76px 0 84px; background: radial-gradient(ellipse at 80% 20%, #f1e6fa 0, transparent 39%), linear-gradient(120deg, #fff9fc, #fff 60%); }
+    .hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 55px; }
+    .eyebrow { color: var(--pink-dark); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 600px; margin: 15px 0 19px; font-size: clamp(42px, 5.1vw, 66px); letter-spacing: -.055em; line-height: 1.04; }
+    h1 span { color: var(--purple); }
+    .hero-copy { max-width: 510px; color: var(--muted); font-size: 17px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 28px; }
+    .impact-note { display: flex; align-items: center; gap: 11px; margin-top: 30px; color: var(--muted); font-size: 13px; }
+    .avatar-stack { display: flex; padding-left: 4px; }
+    .avatar-stack span { display: grid; width: 30px; height: 30px; margin-left: -4px; place-items: center; border: 2px solid white; border-radius: 50%; background: #f7d3e5; font-size: 13px; }
+
+    .hero-art { position: relative; min-height: 440px; display: grid; place-items: center; }
+    .art-backdrop { position: absolute; width: min(400px, 86%); aspect-ratio: 1; border-radius: 48% 52% 43% 57% / 55% 43% 57% 45%; background: linear-gradient(145deg, #f4d6e7, #e9ddf5); transform: rotate(-8deg); }
+    .portrait-card { position: relative; width: min(355px, 78%); height: 375px; overflow: hidden; border: 9px solid rgba(255,255,255,.75); border-radius: 48% 48% 34px 34px; background: linear-gradient(160deg, #f7bad7 0%, #d880b2 48%, #78529e 100%); box-shadow: var(--shadow); }
+    .portrait-card:before { position: absolute; right: -20%; bottom: -35%; left: -20%; height: 67%; border-radius: 50% 50% 0 0; background: linear-gradient(120deg, #9058a1, #563d78); content: ""; }
+    .portrait-sun { position: absolute; top: 27px; right: 28px; width: 82px; height: 82px; border-radius: 50%; background: rgba(255, 238, 195, .75); }
+    .portrait-person { position: absolute; z-index: 1; bottom: 68px; left: 50%; width: 175px; height: 235px; transform: translateX(-50%); }
+    .hair { position: absolute; top: 0; left: 29px; width: 117px; height: 137px; border-radius: 48% 48% 43% 43%; background: #302333; }
+    .face { position: absolute; top: 25px; left: 46px; width: 83px; height: 107px; border-radius: 45% 45% 48% 48%; background: #8f563f; }
+    .face:before, .face:after { position: absolute; top: 49px; width: 7px; height: 4px; border-radius: 50%; background: #302333; content: ""; }
+    .face:before { left: 20px; }
+    .face:after { right: 20px; }
+    .smile { position: absolute; top: 73px; left: 34px; width: 16px; height: 9px; border-bottom: 2px solid #612f32; border-radius: 0 0 50% 50%; }
+    .neck { position: absolute; top: 120px; left: 72px; width: 31px; height: 38px; background: #8f563f; }
+    .dress { position: absolute; bottom: 0; left: 13px; width: 150px; height: 100px; border-radius: 48% 48% 12px 12px; background: #f4a9cd; }
+    .floating-card { position: absolute; right: -1px; bottom: 49px; max-width: 190px; padding: 15px 17px; border: 1px solid #f1eaf4; border-radius: 17px; background: white; box-shadow: var(--shadow); font-size: 12px; }
+    .floating-card strong { display: block; color: var(--purple); font-size: 20px; }
+    .sparkle { position: absolute; color: var(--pink); font-size: 31px; }
+    .sparkle.one { top: 38px; left: 30px; }
+    .sparkle.two { top: 93px; right: 21px; color: var(--purple); font-size: 21px; }
+
+    section { padding: 83px 0; }
+    .section-heading { max-width: 650px; margin: 0 auto 42px; text-align: center; }
+    .section-heading h2 { margin: 10px 0 12px; font-size: clamp(31px, 4vw, 44px); letter-spacing: -.04em; line-height: 1.15; }
+    .section-heading p { margin: 0; color: var(--muted); }
+    .programs { background: #fff; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { padding: 26px; border: 1px solid #f0eaf3; border-radius: 20px; background: white; box-shadow: 0 9px 28px rgba(65, 35, 79, .045); }
+    .card-icon { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 15px; background: #fbebf3; font-size: 23px; }
+    .card:nth-child(2) .card-icon { background: #f1eafa; }
+    .card:nth-child(3) .card-icon { background: #fff2df; }
+    .card h3 { margin: 17px 0 8px; font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .mission { background: var(--lilac); }
+    .mission-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 65px; }
+    .mission-art { position: relative; min-height: 300px; overflow: hidden; border-radius: 28px; background: linear-gradient(145deg, #f2c6dc, #cab3e4); }
+    .mission-art:before { position: absolute; right: 15%; bottom: -56px; width: 260px; height: 260px; border: 22px solid rgba(255,255,255,.5); border-radius: 50%; content: ""; }
+    .mission-art:after { position: absolute; top: 52px; left: 52px; width: 120px; height: 120px; border: 2px solid rgba(255,255,255,.65); border-radius: 50%; box-shadow: 0 0 0 18px rgba(255,255,255,.14), 0 0 0 38px rgba(255,255,255,.1); content: ""; }
+    .mission-quote { position: absolute; z-index: 1; right: 25px; bottom: 24px; left: 25px; padding: 19px 22px; border-radius: 16px; background: rgba(255,255,255,.91); color: var(--purple); font-size: 16px; font-weight: 700; }
+    .mission-copy h2 { margin: 12px 0; font-size: clamp(32px, 4vw, 44px); letter-spacing: -.04em; line-height: 1.15; }
+    .mission-copy p { color: var(--muted); }
+    .checklist { display: grid; gap: 11px; margin: 22px 0 0; padding: 0; list-style: none; }
+    .checklist li:before { margin-right: 10px; color: var(--pink-dark); content: "✓"; font-weight: 800; }
+
+    .cta { padding: 72px 0; color: white; background: linear-gradient(115deg, #794ba0, #bd5796); text-align: center; }
+    .cta h2 { margin: 0 0 12px; font-size: clamp(32px, 4vw, 46px); letter-spacing: -.04em; }
+    .cta p { max-width: 590px; margin: 0 auto 24px; color: rgba(255,255,255,.85); }
+    .cta .button { color: var(--purple); background: white; box-shadow: none; }
+    footer { padding: 27px 0; color: var(--muted); font-size: 13px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-row p { margin: 0; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { text-decoration: none; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .nav { min-height: 70px; }
+      .menu-toggle { display: block; }
+      nav { position: absolute; top: 70px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 9px 18px 18px; border-bottom: 1px solid #eee6f1; background: white; }
+      nav.open { display: flex; flex-direction: column; }
+      nav a { padding: 12px 5px; }
+      nav .button { margin-top: 8px; }
+      .hero { padding: 51px 0 57px; }
+      .hero-grid, .mission-grid { grid-template-columns: 1fr; gap: 27px; }
+      .hero-art { min-height: 370px; }
+      .portrait-card { height: 330px; }
+      .portrait-person { bottom: 49px; transform: translateX(-50%) scale(.9); transform-origin: bottom center; }
+      .floating-card { right: 0; bottom: 28px; }
+      section { padding: 62px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .mission-grid { gap: 30px; }
+      .mission-art { min-height: 245px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Girl Child Hope Foundation home">
+        <span class="brand-mark" aria-hidden="true">♡</span>
+        <span>Girl Child Hope<small>Foundation</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav aria-label="Main navigation">
+        <a href="#about">Our mission</a>
+        <a href="#programs">What we do</a>
+        <a href="#contact">Get involved</a>
+        <a class="button" href="#contact">Support a girl</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Hope grows when girls thrive</div>
+          <h1>Every girl deserves a <span>bright future.</span></h1>
+          <p class="hero-copy">We stand alongside girls and their communities, helping make education, wellbeing, and opportunity part of every girl's story.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Make a difference <span aria-hidden="true">&nbsp;→</span></a>
+            <a class="button secondary" href="#about">Learn about us</a>
+          </div>
+          <div class="impact-note">
+            <div class="avatar-stack" aria-hidden="true"><span>🌸</span><span>✦</span><span>♡</span></div>
+            <span>Every act of support can open a door.</span>
+          </div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Illustration of a smiling girl against a hopeful pink and purple background">
+          <div class="art-backdrop"></div>
+          <span class="sparkle one" aria-hidden="true">✦</span>
+          <span class="sparkle two" aria-hidden="true">✧</span>
+          <div class="portrait-card" aria-hidden="true">
+            <div class="portrait-sun"></div>
+            <div class="portrait-person"><div class="hair"></div><div class="face"><div class="smile"></div></div><div class="neck"></div><div class="dress"></div></div>
+          </div>
+          <div class="floating-card"><strong>Her future matters</strong>Let's help her learn, grow, and shine.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs" id="programs">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">How we help</div>
+          <h2>Room to learn. Space to thrive.</h2>
+          <p>When girls have the right support around them, they can shape a future full of possibility.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📚</div>
+            <h3>Education for all</h3>
+            <p>Encouraging access to learning and the resources girls need to keep reaching for their goals.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🌱</div>
+            <h3>Confidence &amp; care</h3>
+            <p>Creating supportive spaces where girls feel seen, valued, and empowered to speak up.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🤝</div>
+            <h3>Stronger communities</h3>
+            <p>Working together with families and communities to build a brighter future for every girl.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission" id="about">
+      <div class="wrap mission-grid">
+        <div class="mission-art" role="img" aria-label="Abstract pink and purple artwork representing growth and hope">
+          <div class="mission-quote">“When a girl is supported, a whole community can flourish.”</div>
+        </div>
+        <div class="mission-copy">
+          <div class="eyebrow">Our mission</div>
+          <h2>A little hope can change everything.</h2>
+          <p>Girl Child Hope Foundation believes every girl deserves the chance to learn, feel safe, and make choices about her own future. We bring people together to turn that belief into meaningful support.</p>
+          <ul class="checklist">
+            <li>Listen to girls and respect their voices</li>
+            <li>Support opportunity, dignity, and wellbeing</li>
+            <li>Build change together with local communities</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="wrap">
+        <h2>Be part of her story.</h2>
+        <p>Your encouragement, time, and generosity can help create a world where every girl has the chance to thrive.</p>
+        <a class="button" href="mailto:hello@girlchildhope.org?subject=Supporting%20Girl%20Child%20Hope%20Foundation">Get in touch <span aria-hidden="true">&nbsp;→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <p>© <span id="year"></span> Girl Child Hope Foundation. Every girl. Every possibility.</p>
+      <div class="footer-links"><a href="#about">Our mission</a><a href="#contact">Contact</a></div>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector("nav");
+    toggle.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+    navigation.addEventListener("click", event => {
+      if (event.target.closest("a")) {
+        navigation.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation");
+      }
+    });
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
